@@ -1,0 +1,17 @@
+<div class="profile-page" *ngIf="userProfile">
+  <div class="user-info">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-10 offset-md-1">
+          <img class="user-img" [src]="userProfile.image" />
+          <h4>{{ userProfile.username }}</h4>
+          <p>{{ userProfile.bio }}</p>
+          <div>
+            <a *ngIf="isCurrentUserProfile$ | async" class="btn btn-sm btn-outline-secondary action-btn"
+              [routerLink]="['/settings']">Edit Profile Settings</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
